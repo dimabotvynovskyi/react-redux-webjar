@@ -69,16 +69,10 @@
 						<configuration>
 							<target>
 								<echo message="create dist directory"/>
-								<mkdir dir="${project.build.directory}/${project.artifactId}-${upstream.version}"/>
+								<mkdir dir="${destDir}"/>
 								<echo message="download source"/>
-								<get src="${upstream.url}/react-redux.js"
-									 dest="${project.build.directory}/${project.artifactId}-${upstream.version}/${project.artifactId}.js"/>
-								<get src="${upstream.url}/react-redux.min.js"
-									 dest="${project.build.directory}/${project.artifactId}-${upstream.version}/${project.artifactId}.min.js"/>
-								<echo message="moving resources"/>
-								<move todir="${destDir}">
-									<fileset dir="${project.build.directory}/${project.artifactId}-${upstream.version}"/>
-								</move>
+								<get src="${upstream.url}/react-redux.js" dest="${destDir}"/>
+								<get src="${upstream.url}/react-redux.min.js" dest="${destDir}"/>
 							</target>
 						</configuration>
 					</execution>
